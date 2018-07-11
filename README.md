@@ -1,2 +1,3 @@
-# dnd-email-builder
-Angular6 implementation of a drag and drop email template builder
+# DndEmailBuilder
+
+A prototype of drag-and-drop email template builder completely written in Angular6

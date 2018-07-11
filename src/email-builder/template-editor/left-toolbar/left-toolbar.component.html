@@ -1,0 +1,9 @@
+<div fxLayout="row wrap">
+    <template-tool-card fxFlex="40%"
+                        fxFlexOffset="20px"
+                        *ngFor="let currentTool of toolList" 
+                        [tool]="currentTool"
+                        draggable="true"
+                        (dragstart)="drag($event)">
+    </template-tool-card>
+</div>
