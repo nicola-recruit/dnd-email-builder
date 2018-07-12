@@ -1,5 +1,5 @@
 import {　Component, Input　} from '@angular/core';
-import { TemplateEditorTool } from '../template-editor.interfaces';
+import { TemplateTool } from './classes/TemplateTool';
 
 @Component({
     selector: 'template-tool-card',
@@ -8,7 +8,7 @@ import { TemplateEditorTool } from '../template-editor.interfaces';
 })
 export class TemplateToolCard {
     
-    @Input() public tool: TemplateEditorTool;
+    @Input() public tool: TemplateTool;
 
 
 }

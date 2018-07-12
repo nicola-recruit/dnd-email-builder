@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { EditorToolService } from './editor-tool.service';
-import { TemplateEditorTool } from '../template-editor.interfaces';
+import { LeftToolbarService } from './left-toolbar.service';
+import { TemplateTool } from './classes/TemplateTool';
+import { DragAndDropEventService } from '../common/drag-and-drop-event.service';
 
 @Component({
     selector: 'left-toolbar',
@@ -8,13 +9,16 @@ import { TemplateEditorTool } from '../template-editor.interfaces';
 })
 export class LeftToolbar {
 
-    public toolList: TemplateEditorTool[];
+    public toolList: TemplateTool[];
 
-    constructor (private editorToolService: EditorToolService) {
-        this.toolList = editorToolService.getEditorToolRegistry();
+    constructor (private leftToolbarService: LeftToolbarService, private dragAndDropEventService: DragAndDropEventService) {
+        this.toolList = leftToolbarService.getEditorToolRegistry();
     }
 
-    public drag (ev:Event): void {
-        console.log(ev.type);
-      }
+    public drag (event: DragEvent, currentTool: TemplateTool): void {
+        const payload = {
+            category: currentTool.getCategory()
+        };
+        this.dragAndDropEventService.setDataOnDragEvent(event, payload);
+    }
 }

@@ -4,6 +4,6 @@
                         *ngFor="let currentTool of toolList" 
                         [tool]="currentTool"
                         draggable="true"
-                        (dragstart)="drag($event)">
+                        (dragstart)="drag($event, currentTool)">
     </template-tool-card>
 </div>
