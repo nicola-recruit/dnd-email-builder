@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { LeftToolbarService } from './left-toolbar.service';
 import { TemplateTool } from './classes/TemplateTool';
-import { DragAndDropEventService } from '../common/drag-and-drop-event.service';
+import { DragAndDropEventService } from 'email-builder/template-editor/common/drag-and-drop-event.service';
 
 @Component({
     selector: 'left-toolbar',

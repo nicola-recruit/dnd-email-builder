@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
-import { DragAndDropEventService } from '../common/drag-and-drop-event.service';
+import { Component, Input } from '@angular/core';
+import { DragAndDropEventService } from 'email-builder/template-editor/common/drag-and-drop-event.service';
+import { MailTemplateSection, DragAndDropEventPayloadData } from 'email-builder/template-editor/template-editor.types';
+import { MailSectionFactory } from 'email-builder/template-editor/common/classes/MailSectionFactory';
+import { CanvasEventService } from 'email-builder/template-editor/common/canvas-event.service';
 
 @Component({
     selector: 'editor-canvas',
@@ -8,7 +11,13 @@ import { DragAndDropEventService } from '../common/drag-and-drop-event.service';
 })
 export class EditorCanvas {
 
-    constructor (private dragAndDropEventService: DragAndDropEventService) {}
+    private mailSectionFactory: MailSectionFactory;
+
+    @Input() public mailSections: MailTemplateSection[];
+
+    constructor (private dragAndDropEventService: DragAndDropEventService, private canvasEventService: CanvasEventService) {
+        this.mailSectionFactory = new MailSectionFactory();
+    }
 
     public dragOver (event:DragEvent): void {
         event.preventDefault();
@@ -16,6 +25,16 @@ export class EditorCanvas {
 
     public drop (event:DragEvent): void {
         event.preventDefault();
-        const templateTool = this.dragAndDropEventService.getDataOnDropEvent(event);
+        const dragAndDropEventData = this.dragAndDropEventService.getDataOnDropEvent(event);
+        const newMailSection = this.createNewMailSection(dragAndDropEventData);
+        this.mailSections.push(newMailSection);
+    }
+
+    private createNewMailSection (dragAndDropEventData: DragAndDropEventPayloadData): MailTemplateSection {
+        return this.mailSectionFactory.buildMailSection(dragAndDropEventData.category);
+    }
+
+    public selectMailSection (section: MailTemplateSection): void {
+        this.canvasEventService.setSelectedMailSection(section);
     }
 }

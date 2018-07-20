@@ -1,3 +1,7 @@
 <div fxFlexFill class="editor-canvas" (drop)="drop($event)" (dragover)="dragOver($event)">
 
+    <generic-section    *ngFor="let section of mailSections" 
+                        [sectionModel]="section"
+                        (click)="selectMailSection(section)">
+    </generic-section>
 </div>

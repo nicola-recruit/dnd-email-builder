@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { DragAndDropEventPayloadData } from '../template-editor.types'
+import { DragAndDropEventPayloadData } from 'email-builder/template-editor/template-editor.types';
 
 @Injectable({
     providedIn: 'root',
