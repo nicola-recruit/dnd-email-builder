@@ -4,6 +4,7 @@ export abstract class BaseMailSection implements MailTemplateSection {
 
     public uid: string;
     public category: TemplateEditorToolCategory;
+    public editable: boolean;
 
     constructor () {}
 
@@ -44,5 +45,13 @@ export abstract class BaseMailSection implements MailTemplateSection {
                 currentConfigurationBlock.fromJSON(configurationBlockJSON);
             }
         });
+    }
+
+    public setAsEditable (): void {
+        this.editable = true;
+    }
+
+    public setAsReadonly (): void {
+        this.editable = false;
     }
 }

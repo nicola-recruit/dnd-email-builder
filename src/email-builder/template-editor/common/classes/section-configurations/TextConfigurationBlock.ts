@@ -1,29 +1,36 @@
 import { MailSectionConfigurationBlockCategory, MailSectionConfigurationBlock } from 'email-builder/template-editor/template-editor.types';
 
-export class TextFeatureConfigurationBlock implements MailSectionConfigurationBlock {
+export class TextConfigurationBlock implements MailSectionConfigurationBlock {
 
     public category: MailSectionConfigurationBlockCategory;
-    public fontFamily: string;
     public fontSize: number;
     public fontColor: string;
+    public italic: boolean;
+    public underline: boolean;
+    public bold: boolean;
 
     constructor () {
-        this.category = MailSectionConfigurationBlockCategory.TextFeature;
+        this.category = MailSectionConfigurationBlockCategory.Text;
+        this.fontSize = 8;
     }
 
     public toJSON (): any {
         const state = {
             category: this.category,
-            fontFamily: this.fontFamily,
             fontSize: this.fontSize,
-            fontColor: this.fontColor
+            fontColor: this.fontColor,
+            italic: this.italic,
+            bold: this.bold,
+            underline: this.underline
         };
         return state;
     }
 
     public fromJSON (state: any): void {
-        this.fontFamily = state.fontFamily;
         this.fontSize = state.fontSize;
         this.fontColor = state.fontColor;
+        this.italic = state.italic;
+        this.bold = state.bold;
+        this.underline = state.underline;
     }
 }

@@ -1,3 +1,4 @@
-<div [ngStyle]="{'background-color': getBackgroundColor(), 'padding': getPadding() + 'px'}">
-    <span>THERE</span>
+<div [ngStyle]="buildStyle()" [hidden]="shouldBeHidden()">
+    <span>{{ model.title }}</span>
 </div>
+<input type="text" name="title" class="text-input" required [hidden]="!shouldBeHidden()" [ngStyle]="buildStyle()" [(ngModel)]="model.title"/>

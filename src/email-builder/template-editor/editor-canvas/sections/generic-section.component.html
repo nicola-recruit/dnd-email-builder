@@ -1,4 +1,8 @@
-<div  class="mail-section-borders" [ngSwitch]="sectionModel.category">
-    <title-section  *ngSwitchCase= "toolCategory.Title"
+<div class="mail-section-borders" [ngSwitch]="sectionModel.category" (click)="handleClickEventOnComponent()">
+    <title-section *ngSwitchCase= "toolCategory.Title"
                     [model]="sectionModel"></title-section>
+    <text-section *ngSwitchCase= "toolCategory.Text"
+                    [model]="sectionModel"></text-section>
+    <divider-section *ngSwitchCase= "toolCategory.Divider"
+                    [model]="sectionModel"></divider-section>
 </div>

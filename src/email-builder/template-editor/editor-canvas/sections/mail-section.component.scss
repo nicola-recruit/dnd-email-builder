@@ -1,3 +1,10 @@
 .mail-section-borders {
     border-bottom: 1px dashed #000;
 }
+input {
+    &.text-input {
+        border: none;
+        border-color: transparent;
+        width: 100%;
+    }
+}

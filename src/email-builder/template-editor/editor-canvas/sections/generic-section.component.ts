@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Host, HostListener, ElementRef } from '@angular/core';
 import { MailTemplateSection } from 'email-builder/template-editor/template-editor.types';
 import { TemplateEditorToolCategory } from 'email-builder/template-editor/template-editor.types';
+import { EditorCanvas } from 'email-builder/template-editor/editor-canvas/editor-canvas.component';
 
 
 @Component({
@@ -14,5 +15,17 @@ export class GenericSection {
 
     @Input() public sectionModel: MailTemplateSection;
 
-    constructor () {}
+    constructor (@Host() private editorCanvas: EditorCanvas, private elementReference: ElementRef) {}
+
+    public handleClickEventOnComponent (): void {
+        this.sectionModel.setAsEditable();
+        this.editorCanvas.selectMailSection(this.sectionModel);
+    }
+
+    @HostListener('document:mousedown', ['$event.target']) 
+    public handleClickEventOutsideComponent (target: any): void {
+        if (!this.elementReference.nativeElement.contains(target)) {
+            this.sectionModel.setAsReadonly();
+        }
+    }
 }

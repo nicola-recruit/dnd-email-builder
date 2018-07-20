@@ -1,0 +1,8 @@
+<div [ngSwitch]="configurationBlock.category">
+    <padding-color-configurator *ngSwitchCase= "blockCategory.PaddingAndColor" [configurationBlock]="configurationBlock">
+    </padding-color-configurator>
+    <text-configurator *ngSwitchCase= "blockCategory.Text" [configurationBlock]="configurationBlock">
+    </text-configurator>
+    <orientation-configurator *ngSwitchCase= "blockCategory.Orientation" [configurationBlock]="configurationBlock">
+    </orientation-configurator>    
+</div>

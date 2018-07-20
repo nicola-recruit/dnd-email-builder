@@ -4,36 +4,36 @@ import { OrientationConfigurationBlock } from 'email-builder/template-editor/com
 
 import { TitleAndTextMailSection } from './TitleAndTextMailSection';
 
-export class TitleMailSection extends TitleAndTextMailSection {
+export class TextMailSection extends TitleAndTextMailSection {
 
-    public title: string;
+    public text: string;
 
     constructor () {
         super();
-        this.category = TemplateEditorToolCategory.Title;
-        this.title = '<Click and edit>';
+        this.category = TemplateEditorToolCategory.Text;
+        this.text = '<Click and edit>';
     }
 
     protected buildTextConfiguration (): TextConfigurationBlock {
         const textConfiguration = new TextConfigurationBlock();
-        textConfiguration.fontSize = 24;
+        textConfiguration.fontSize = 12;
         return textConfiguration;
     }
 
     protected buildOrientationConfiguration (): OrientationConfigurationBlock {
         const orientationConfiguration = new OrientationConfigurationBlock();
-        orientationConfiguration.orientation = orientationConfiguration.center;
+        orientationConfiguration.orientation = orientationConfiguration.left;
         return orientationConfiguration;
     }
 
     protected getJSONState (): any {
         const state = {
-            title: this.title
+            text: this.text
         };
         return state;
     }
 
     protected setJSONState (state: any): void {
-        this.title = state.title;
+        this.text = state.text;
     }
 }

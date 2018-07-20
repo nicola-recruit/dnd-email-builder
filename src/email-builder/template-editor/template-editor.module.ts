@@ -3,8 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule } from '@angular/material/icon';
-import { MatCardModule } from '@angular/material';
-import { MatInputModule } from '@angular/material';
+import { MatCardModule, MatInputModule, MatButtonModule, MatButtonToggleModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -16,13 +15,16 @@ import { LeftToolbar } from './left-toolbar/left-toolbar.component';
 import { TemplateToolCard } from './left-toolbar/template-tool-card.component';
 
 import { RightToolbar } from './right-toolbar/right-toolbar.component';
-import { GenericBlock } from './right-toolbar/blocks/generic-block.component';
+import { GenericConfigurator } from './right-toolbar/blocks/generic-configurator.component';
 
 import { EditorCanvas } from './editor-canvas/editor-canvas.component';
 import { GenericSection } from './editor-canvas/sections/generic-section.component';
 import { TitleSection } from './editor-canvas/sections/title-section.component';
-import { PaddingColorConfigurationBlock } from './right-toolbar/blocks/padding-color-configuration-block.component';
-
+import { TextSection } from './editor-canvas/sections/text-section.component';
+import { DividerSection } from './editor-canvas/sections/divider-section.component';
+import { PaddingColorConfigurator } from './right-toolbar/blocks/padding-color-configurator.component';
+import { TextConfigurator } from './right-toolbar/blocks/text-configurator.component';
+import { OrientationConfigurator } from './right-toolbar/blocks/orientation-configurator.component';
 
 @NgModule({
     declarations: [
@@ -32,9 +34,13 @@ import { PaddingColorConfigurationBlock } from './right-toolbar/blocks/padding-c
         EditorCanvas,
         GenericSection,
         TitleSection,
+        TextSection,
+        DividerSection,
         RightToolbar,
-        GenericBlock,
-        PaddingColorConfigurationBlock
+        GenericConfigurator,
+        PaddingColorConfigurator,
+        TextConfigurator,
+        OrientationConfigurator
     ],
     imports: [
         BrowserModule,
@@ -42,6 +48,8 @@ import { PaddingColorConfigurationBlock } from './right-toolbar/blocks/padding-c
         MatIconModule,
         MatCardModule,
         MatInputModule,
+        MatButtonModule,
+        MatButtonToggleModule,
         MccColorPickerModule,
         BrowserAnimationsModule,
         FormsModule,

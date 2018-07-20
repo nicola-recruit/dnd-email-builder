@@ -1,16 +1,43 @@
 import { TemplateEditorToolCategory, MailTemplateSection } from 'email-builder/template-editor/template-editor.types';
 import { TitleMailSection } from './mail-sections/TitleMailSection';
+import { TextMailSection } from './mail-sections/TextMailSection';
+import { DividerMailSection } from './mail-sections/DividerMailSection';
 import { NullMailSection } from './mail-sections/NullMailSection';
+import { BaseMailSection } from 'email-builder/template-editor/common/classes/mail-sections/BaseMailSection';
+
+type MailSectionConstructorRepository = {
+    [category: number]: { new(): BaseMailSection }
+};
 
 export class MailSectionFactory {
 
+    private constructorRepository: MailSectionConstructorRepository;
+
+    constructor () {
+        this.constructorRepository = this.buildConstructorRepository();
+    }
+
+    private buildConstructorRepository (): MailSectionConstructorRepository {
+        const repository = {
+            [TemplateEditorToolCategory.Title]: TitleMailSection,
+            [TemplateEditorToolCategory.Text]: TextMailSection,
+            [TemplateEditorToolCategory.Divider]: DividerMailSection
+        };
+        return repository;
+    }
+
     public buildMailSection (toolCategory: TemplateEditorToolCategory): MailTemplateSection {
 
-        if (toolCategory === TemplateEditorToolCategory.Title) {
-            return this.buildTitleSection();
+        if (!this.constructorRepository[toolCategory]) {
+            return new NullMailSection();
         }
 
-        return new NullMailSection();
+        const newMailSection = new this.constructorRepository[toolCategory]();
+
+        this.setGeneralProperties(newMailSection);
+        this.setTypeSpecificProperties(newMailSection);
+
+        return newMailSection;
     }
 
     private getNewUid (): string {
@@ -18,9 +45,10 @@ export class MailSectionFactory {
         return currentMillisTimestamp.toString(36);
     }
 
-    private buildTitleSection (): TitleMailSection {
-        const section = new TitleMailSection();
-        section.uid = this.getNewUid();
-        return section;
+    private setGeneralProperties (newMailSection: BaseMailSection): void {
+        newMailSection.uid = this.getNewUid();
+    }
+
+    private setTypeSpecificProperties (newMailSection: BaseMailSection): void {
     }
 }

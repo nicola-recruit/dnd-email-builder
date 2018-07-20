@@ -1,0 +1,4 @@
+<div [ngStyle]="buildStyle()" [hidden]="shouldBeHidden()">
+    <span>{{ model.text }}</span>
+</div>
+<input type="text" name="text" class="text-input" required [hidden]="!shouldBeHidden()" [ngStyle]="buildStyle()" [(ngModel)]="model.text"/>

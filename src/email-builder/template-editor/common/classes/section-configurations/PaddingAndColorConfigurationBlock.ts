@@ -8,6 +8,7 @@ export class PaddingAndColorConfigurationBlock implements MailSectionConfigurati
 
     constructor () {
         this.category = MailSectionConfigurationBlockCategory.PaddingAndColor;
+        this.padding = 0;
     }
 
     public toJSON (): any {

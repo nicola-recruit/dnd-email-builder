@@ -4,10 +4,10 @@ import { MailSectionConfigurationBlockCategory } from 'email-builder/template-ed
 
 
 @Component({
-    selector: 'generic-block',
-    templateUrl: './generic-block.component.html'
+    selector: 'generic-configurator',
+    templateUrl: './generic-configurator.component.html'
 })
-export class GenericBlock {
+export class GenericConfigurator {
 
     public blockCategory:any = MailSectionConfigurationBlockCategory;
 

@@ -2,6 +2,11 @@ import { MailSectionConfigurationBlockCategory, MailSectionConfigurationBlock } 
 
 export class OrientationConfigurationBlock implements MailSectionConfigurationBlock {
 
+    public readonly left: string = 'left';
+    public readonly center: string = 'center';
+    public readonly right: string = 'right';
+    public readonly justify: string = 'justify';
+
     public category: MailSectionConfigurationBlockCategory;
     public orientation: string;
 
