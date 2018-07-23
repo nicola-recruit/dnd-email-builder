@@ -5,7 +5,7 @@ import { OrientationConfigurationBlock } from 'email-builder/template-editor/com
 
 import { BaseMailSection } from './BaseMailSection';
 
-export abstract class TitleAndTextMailSection extends BaseMailSection {
+export abstract class TextBasedMailSection extends BaseMailSection {
 
     protected paddingAndColorConfiguration: PaddingAndColorConfigurationBlock;
     protected textConfiguration: TextConfigurationBlock;
@@ -13,10 +13,15 @@ export abstract class TitleAndTextMailSection extends BaseMailSection {
 
     constructor () {
         super();
-        this.paddingAndColorConfiguration = new PaddingAndColorConfigurationBlock();
+        this.paddingAndColorConfiguration = this.buildPaddingAndColorConfiguration();
         this.textConfiguration = this.buildTextConfiguration();
         this.orientationConfiguration = this.buildOrientationConfiguration();
     }
+
+    protected buildPaddingAndColorConfiguration (): PaddingAndColorConfigurationBlock {
+        const paddingAndColorConfiguration = new PaddingAndColorConfigurationBlock();
+        return paddingAndColorConfiguration;
+    } 
 
     protected abstract buildTextConfiguration (): TextConfigurationBlock;
 

@@ -1,8 +1,8 @@
-import { TitleAndTextMailSection } from 'email-builder/template-editor/common/classes/mail-sections/TitleAndTextMailSection';
+import { TextBasedMailSection } from 'email-builder/template-editor/common/classes/mail-sections/TextBasedMailSection';
 
-export class TitleAndTextSectionComponent {
+export class TextBasedSectionComponent {
 
-    public model: TitleAndTextMailSection;
+    public model: TextBasedMailSection;
 
     constructor () {}
 
@@ -25,42 +25,42 @@ export class TitleAndTextSectionComponent {
         return this.model.editable;
     }
 
-    private getBackgroundColor (): string {
+    protected getBackgroundColor (): string {
         const paddingAndColorConfiguration = this.model.getPaddingAndColorConfiguration();
         return paddingAndColorConfiguration.backgroundColor;
     }
 
-    private getPadding (): string {
+    protected getPadding (): string {
         const paddingAndColorConfiguration = this.model.getPaddingAndColorConfiguration();
         return paddingAndColorConfiguration.padding.toString() + 'px';
     }
 
-    private getFontColor (): string {
+    protected getFontColor (): string {
         const textConfiguration = this.model.getTextConfiguration();
         return textConfiguration.fontColor;
     }
 
-    private getFontSize (): string {
+    protected getFontSize (): string {
         const textConfiguration = this.model.getTextConfiguration();
         return textConfiguration.fontSize.toString() + 'pt';
     }
 
-    private getUnderline (): string {
+    protected getUnderline (): string {
         const textConfiguration = this.model.getTextConfiguration();
         return textConfiguration.underline ? 'underline' : '';
     }
 
-    private getBold (): string {
+    protected getBold (): string {
         const textConfiguration = this.model.getTextConfiguration();
         return textConfiguration.bold ? 'bold' : '';
     }
 
-    private getItalic (): string {
+    protected getItalic (): string {
         const textConfiguration = this.model.getTextConfiguration();
         return textConfiguration.italic ? 'italic' : '';
     }
 
-    private getTextAlignment (): string {
+    protected getTextAlignment (): string {
         const orientationConfiguration = this.model.getOrientationConfiguration();
         return orientationConfiguration.orientation;
     }

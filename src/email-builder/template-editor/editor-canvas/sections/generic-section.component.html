@@ -5,4 +5,8 @@
                     [model]="sectionModel"></text-section>
     <divider-section *ngSwitchCase= "toolCategory.Divider"
                     [model]="sectionModel"></divider-section>
+    <button-section *ngSwitchCase= "toolCategory.Button"
+                    [model]="sectionModel"></button-section>
+    <link-section *ngSwitchCase= "toolCategory.Link"
+                    [model]="sectionModel"></link-section>                    
 </div>

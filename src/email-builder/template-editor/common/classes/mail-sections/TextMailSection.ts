@@ -2,9 +2,9 @@ import { TemplateEditorToolCategory } from 'email-builder/template-editor/templa
 import { TextConfigurationBlock } from 'email-builder/template-editor/common/classes/section-configurations/TextConfigurationBlock';
 import { OrientationConfigurationBlock } from 'email-builder/template-editor/common/classes/section-configurations/OrientationConfigurationBlock';
 
-import { TitleAndTextMailSection } from './TitleAndTextMailSection';
+import { TextBasedMailSection } from './TextBasedMailSection';
 
-export class TextMailSection extends TitleAndTextMailSection {
+export class TextMailSection extends TextBasedMailSection {
 
     public text: string;
 

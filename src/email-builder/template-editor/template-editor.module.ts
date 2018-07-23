@@ -16,15 +16,18 @@ import { TemplateToolCard } from './left-toolbar/template-tool-card.component';
 
 import { RightToolbar } from './right-toolbar/right-toolbar.component';
 import { GenericConfigurator } from './right-toolbar/blocks/generic-configurator.component';
+import { PaddingColorConfigurator } from './right-toolbar/blocks/padding-color-configurator.component';
+import { TextConfigurator } from './right-toolbar/blocks/text-configurator.component';
+import { OrientationConfigurator } from './right-toolbar/blocks/orientation-configurator.component';
+import { UrlConfigurator } from './right-toolbar/blocks/url-configurator.component';
 
 import { EditorCanvas } from './editor-canvas/editor-canvas.component';
 import { GenericSection } from './editor-canvas/sections/generic-section.component';
 import { TitleSection } from './editor-canvas/sections/title-section.component';
 import { TextSection } from './editor-canvas/sections/text-section.component';
 import { DividerSection } from './editor-canvas/sections/divider-section.component';
-import { PaddingColorConfigurator } from './right-toolbar/blocks/padding-color-configurator.component';
-import { TextConfigurator } from './right-toolbar/blocks/text-configurator.component';
-import { OrientationConfigurator } from './right-toolbar/blocks/orientation-configurator.component';
+import { ButtonSection } from './editor-canvas/sections/button-section.component';
+import { LinkSection } from './editor-canvas/sections/link-section.component';
 
 @NgModule({
     declarations: [
@@ -36,11 +39,14 @@ import { OrientationConfigurator } from './right-toolbar/blocks/orientation-conf
         TitleSection,
         TextSection,
         DividerSection,
+        ButtonSection,
+        LinkSection,
         RightToolbar,
         GenericConfigurator,
         PaddingColorConfigurator,
         TextConfigurator,
-        OrientationConfigurator
+        OrientationConfigurator,
+        UrlConfigurator
     ],
     imports: [
         BrowserModule,

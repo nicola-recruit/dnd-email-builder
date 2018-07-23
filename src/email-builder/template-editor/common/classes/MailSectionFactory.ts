@@ -3,7 +3,9 @@ import { TitleMailSection } from './mail-sections/TitleMailSection';
 import { TextMailSection } from './mail-sections/TextMailSection';
 import { DividerMailSection } from './mail-sections/DividerMailSection';
 import { NullMailSection } from './mail-sections/NullMailSection';
-import { BaseMailSection } from 'email-builder/template-editor/common/classes/mail-sections/BaseMailSection';
+import { BaseMailSection } from './mail-sections/BaseMailSection';
+import { ButtonMailSection } from './mail-sections/ButtonMailSection';
+import { LinkMailSection } from './mail-sections/LinkMailSection';
 
 type MailSectionConstructorRepository = {
     [category: number]: { new(): BaseMailSection }
@@ -21,7 +23,9 @@ export class MailSectionFactory {
         const repository = {
             [TemplateEditorToolCategory.Title]: TitleMailSection,
             [TemplateEditorToolCategory.Text]: TextMailSection,
-            [TemplateEditorToolCategory.Divider]: DividerMailSection
+            [TemplateEditorToolCategory.Divider]: DividerMailSection,
+            [TemplateEditorToolCategory.Button]: ButtonMailSection,
+            [TemplateEditorToolCategory.Link]: LinkMailSection
         };
         return repository;
     }

@@ -16,7 +16,8 @@ export interface DragAndDropEventPayloadData {
 export enum MailSectionConfigurationBlockCategory {
     PaddingAndColor,
     Orientation,
-    Text
+    Text,
+    Url
 }
 
 export interface JSONConverter {
@@ -34,4 +35,9 @@ export interface MailTemplateSection extends JSONConverter {
     getConfigurationBlocks (): MailSectionConfigurationBlock[];
     setAsEditable (): void;
     setAsReadonly (): void;
+}
+
+export interface UrlBasedMailTemplateSection {
+    url: string;
+    label: string;
 }
