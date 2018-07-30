@@ -17,7 +17,8 @@ export enum MailSectionConfigurationBlockCategory {
     PaddingAndColor,
     Orientation,
     Text,
-    Url
+    Url,
+    SocialId
 }
 
 export interface JSONConverter {
@@ -41,3 +42,5 @@ export interface UrlBasedMailTemplateSection {
     url: string;
     label: string;
 }
+
+export type ModelPropertyUpdateCallback = (value: any) => void;

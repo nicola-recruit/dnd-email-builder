@@ -35,8 +35,12 @@ export class LinkMailSection extends TextBasedMailSection implements UrlBasedMai
         this.label = state.label;
     }
 
+    private setLinkUrl (url: any): void {
+        this.url = url;
+    }
+
     private buildUrlConfiguration (): UrlConfigurationBlock {
-        const urlConfiguration = new UrlConfigurationBlock(this);
+        const urlConfiguration = new UrlConfigurationBlock(this.setLinkUrl);
         return urlConfiguration;
     }
 

@@ -20,6 +20,7 @@ import { PaddingColorConfigurator } from './right-toolbar/blocks/padding-color-c
 import { TextConfigurator } from './right-toolbar/blocks/text-configurator.component';
 import { OrientationConfigurator } from './right-toolbar/blocks/orientation-configurator.component';
 import { UrlConfigurator } from './right-toolbar/blocks/url-configurator.component';
+import { SocialIdConfigurator } from './right-toolbar/blocks/socialid-configurator.component';
 
 import { EditorCanvas } from './editor-canvas/editor-canvas.component';
 import { GenericSection } from './editor-canvas/sections/generic-section.component';
@@ -29,6 +30,7 @@ import { DividerSection } from './editor-canvas/sections/divider-section.compone
 import { ButtonSection } from './editor-canvas/sections/button-section.component';
 import { LinkSection } from './editor-canvas/sections/link-section.component';
 import { SignatureSection } from './editor-canvas/sections/signature-section.component';
+import { SocialSection } from './editor-canvas/sections/social-section.component';
 
 @NgModule({
     declarations: [
@@ -43,12 +45,14 @@ import { SignatureSection } from './editor-canvas/sections/signature-section.com
         ButtonSection,
         LinkSection,
         SignatureSection,
+        SocialSection,
         RightToolbar,
         GenericConfigurator,
         PaddingColorConfigurator,
         TextConfigurator,
         OrientationConfigurator,
-        UrlConfigurator
+        UrlConfigurator,
+        SocialIdConfigurator
     ],
     imports: [
         BrowserModule,

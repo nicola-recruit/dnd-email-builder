@@ -8,6 +8,7 @@ import { BaseMailSection } from './mail-sections/BaseMailSection';
 import { ButtonMailSection } from './mail-sections/ButtonMailSection';
 import { LinkMailSection } from './mail-sections/LinkMailSection';
 import { SignatureMailSection } from './mail-sections/SignatureMailSection';
+import { SocialMailSection } from './mail-sections/SocialMailSection';
 
 type MailSectionConstructorRepository = {
     [category: number]: { new(): BaseMailSection }
@@ -28,7 +29,8 @@ export class MailSectionFactory {
             [TemplateEditorToolCategory.Divider]: DividerMailSection,
             [TemplateEditorToolCategory.Button]: ButtonMailSection,
             [TemplateEditorToolCategory.Link]: LinkMailSection,
-            [TemplateEditorToolCategory.Signature]: SignatureMailSection
+            [TemplateEditorToolCategory.Signature]: SignatureMailSection,
+            [TemplateEditorToolCategory.Social]: SocialMailSection
         };
         return repository;
     }
