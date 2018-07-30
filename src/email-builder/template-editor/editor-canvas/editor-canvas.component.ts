@@ -3,6 +3,7 @@ import { DragAndDropEventService } from 'email-builder/template-editor/common/dr
 import { MailTemplateSection, DragAndDropEventPayloadData } from 'email-builder/template-editor/template-editor.types';
 import { MailSectionFactory } from 'email-builder/template-editor/common/classes/MailSectionFactory';
 import { CanvasEventService } from 'email-builder/template-editor/common/canvas-event.service';
+import { UserSignatureService } from 'email-builder/template-editor/common/user-signature.service';
 
 @Component({
     selector: 'editor-canvas',
@@ -15,8 +16,9 @@ export class EditorCanvas {
 
     @Input() public mailSections: MailTemplateSection[];
 
-    constructor (private dragAndDropEventService: DragAndDropEventService, private canvasEventService: CanvasEventService) {
-        this.mailSectionFactory = new MailSectionFactory();
+    constructor (private dragAndDropEventService: DragAndDropEventService, private canvasEventService: CanvasEventService, 
+        private userSignatureService: UserSignatureService) {
+        this.mailSectionFactory = new MailSectionFactory(userSignatureService);
     }
 
     public dragOver (event:DragEvent): void {

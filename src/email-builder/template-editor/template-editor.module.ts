@@ -28,6 +28,7 @@ import { TextSection } from './editor-canvas/sections/text-section.component';
 import { DividerSection } from './editor-canvas/sections/divider-section.component';
 import { ButtonSection } from './editor-canvas/sections/button-section.component';
 import { LinkSection } from './editor-canvas/sections/link-section.component';
+import { SignatureSection } from './editor-canvas/sections/signature-section.component';
 
 @NgModule({
     declarations: [
@@ -41,6 +42,7 @@ import { LinkSection } from './editor-canvas/sections/link-section.component';
         DividerSection,
         ButtonSection,
         LinkSection,
+        SignatureSection,
         RightToolbar,
         GenericConfigurator,
         PaddingColorConfigurator,

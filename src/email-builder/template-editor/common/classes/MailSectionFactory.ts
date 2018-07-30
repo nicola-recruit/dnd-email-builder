@@ -1,4 +1,5 @@
 import { TemplateEditorToolCategory, MailTemplateSection } from 'email-builder/template-editor/template-editor.types';
+import { UserSignatureService } from 'email-builder/template-editor/common/user-signature.service';
 import { TitleMailSection } from './mail-sections/TitleMailSection';
 import { TextMailSection } from './mail-sections/TextMailSection';
 import { DividerMailSection } from './mail-sections/DividerMailSection';
@@ -6,6 +7,7 @@ import { NullMailSection } from './mail-sections/NullMailSection';
 import { BaseMailSection } from './mail-sections/BaseMailSection';
 import { ButtonMailSection } from './mail-sections/ButtonMailSection';
 import { LinkMailSection } from './mail-sections/LinkMailSection';
+import { SignatureMailSection } from './mail-sections/SignatureMailSection';
 
 type MailSectionConstructorRepository = {
     [category: number]: { new(): BaseMailSection }
@@ -15,7 +17,7 @@ export class MailSectionFactory {
 
     private constructorRepository: MailSectionConstructorRepository;
 
-    constructor () {
+    constructor (private userSignatureService: UserSignatureService) {
         this.constructorRepository = this.buildConstructorRepository();
     }
 
@@ -25,7 +27,8 @@ export class MailSectionFactory {
             [TemplateEditorToolCategory.Text]: TextMailSection,
             [TemplateEditorToolCategory.Divider]: DividerMailSection,
             [TemplateEditorToolCategory.Button]: ButtonMailSection,
-            [TemplateEditorToolCategory.Link]: LinkMailSection
+            [TemplateEditorToolCategory.Link]: LinkMailSection,
+            [TemplateEditorToolCategory.Signature]: SignatureMailSection
         };
         return repository;
     }
@@ -53,6 +56,9 @@ export class MailSectionFactory {
         newMailSection.uid = this.getNewUid();
     }
 
-    private setTypeSpecificProperties (newMailSection: BaseMailSection): void {
+    private setTypeSpecificProperties (newMailSection: any): void {
+        if (newMailSection.category === TemplateEditorToolCategory.Signature) {
+            newMailSection.signature = this.userSignatureService.getUserSignature();
+        }
     }
 }
