@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { DragAndDropEventService } from 'email-builder/template-editor/common/drag-and-drop-event.service';
 import { MailTemplateSection, DragAndDropEventPayloadData } from 'email-builder/template-editor/template-editor.types';
-import { MailSectionFactory } from 'email-builder/template-editor/common/classes/MailSectionFactory';
+import { MailSectionFactoryService } from 'email-builder/template-editor/common/mail-section-factory.service';
 import { CanvasEventService } from 'email-builder/template-editor/common/canvas-event.service';
 import { UserSignatureService } from 'email-builder/template-editor/common/user-signature.service';
 
@@ -12,13 +12,10 @@ import { UserSignatureService } from 'email-builder/template-editor/common/user-
 })
 export class EditorCanvas {
 
-    private mailSectionFactory: MailSectionFactory;
-
     @Input() public mailSections: MailTemplateSection[];
 
     constructor (private dragAndDropEventService: DragAndDropEventService, private canvasEventService: CanvasEventService, 
-        private userSignatureService: UserSignatureService) {
-        this.mailSectionFactory = new MailSectionFactory(userSignatureService);
+        private userSignatureService: UserSignatureService, private mailSectionFactoryService: MailSectionFactoryService) {
     }
 
     public dragOver (event:DragEvent): void {
@@ -33,7 +30,7 @@ export class EditorCanvas {
     }
 
     private createNewMailSection (dragAndDropEventData: DragAndDropEventPayloadData): MailTemplateSection {
-        return this.mailSectionFactory.buildMailSection(dragAndDropEventData.category);
+        return this.mailSectionFactoryService.buildMailSection(dragAndDropEventData.category);
     }
 
     public selectMailSection (section: MailTemplateSection): void {

@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MccColorPickerModule } from 'material-community-components';
+import { MatFileUploadModule } from 'angular-material-fileupload';
 
 import { TemplateEditor } from './template-editor.component';
 import { LeftToolbar } from './left-toolbar/left-toolbar.component';
@@ -31,6 +32,7 @@ import { ButtonSection } from './editor-canvas/sections/button-section.component
 import { LinkSection } from './editor-canvas/sections/link-section.component';
 import { SignatureSection } from './editor-canvas/sections/signature-section.component';
 import { SocialSection } from './editor-canvas/sections/social-section.component';
+import { ImageSection } from './editor-canvas/sections/image-section.component';
 
 @NgModule({
     declarations: [
@@ -46,6 +48,7 @@ import { SocialSection } from './editor-canvas/sections/social-section.component
         LinkSection,
         SignatureSection,
         SocialSection,
+        ImageSection,
         RightToolbar,
         GenericConfigurator,
         PaddingColorConfigurator,
@@ -65,7 +68,8 @@ import { SocialSection } from './editor-canvas/sections/social-section.component
         MccColorPickerModule,
         BrowserAnimationsModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatFileUploadModule
     ],
     exports: [
         TemplateEditor

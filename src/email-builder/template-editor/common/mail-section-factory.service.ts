@@ -1,20 +1,24 @@
+import { Injectable } from '@angular/core';
 import { TemplateEditorToolCategory, MailTemplateSection } from 'email-builder/template-editor/template-editor.types';
 import { UserSignatureService } from 'email-builder/template-editor/common/user-signature.service';
-import { TitleMailSection } from './mail-sections/TitleMailSection';
-import { TextMailSection } from './mail-sections/TextMailSection';
-import { DividerMailSection } from './mail-sections/DividerMailSection';
-import { NullMailSection } from './mail-sections/NullMailSection';
-import { BaseMailSection } from './mail-sections/BaseMailSection';
-import { ButtonMailSection } from './mail-sections/ButtonMailSection';
-import { LinkMailSection } from './mail-sections/LinkMailSection';
-import { SignatureMailSection } from './mail-sections/SignatureMailSection';
-import { SocialMailSection } from './mail-sections/SocialMailSection';
+import { TitleMailSection } from './classes/mail-sections/TitleMailSection';
+import { TextMailSection } from './classes/mail-sections/TextMailSection';
+import { DividerMailSection } from './classes/mail-sections/DividerMailSection';
+import { NullMailSection } from './classes/mail-sections/NullMailSection';
+import { BaseMailSection } from './classes/mail-sections/BaseMailSection';
+import { ButtonMailSection } from './classes/mail-sections/ButtonMailSection';
+import { LinkMailSection } from './classes/mail-sections/LinkMailSection';
+import { SignatureMailSection } from './classes/mail-sections/SignatureMailSection';
+import { SocialMailSection } from './classes/mail-sections/SocialMailSection';
+import { ImageMailSection } from './classes/mail-sections/ImageMailSection';
 
 type MailSectionConstructorRepository = {
     [category: number]: { new(): BaseMailSection }
 };
-
-export class MailSectionFactory {
+@Injectable({
+    providedIn: 'root',
+})
+export class MailSectionFactoryService {
 
     private constructorRepository: MailSectionConstructorRepository;
 
@@ -30,7 +34,8 @@ export class MailSectionFactory {
             [TemplateEditorToolCategory.Button]: ButtonMailSection,
             [TemplateEditorToolCategory.Link]: LinkMailSection,
             [TemplateEditorToolCategory.Signature]: SignatureMailSection,
-            [TemplateEditorToolCategory.Social]: SocialMailSection
+            [TemplateEditorToolCategory.Social]: SocialMailSection,
+            [TemplateEditorToolCategory.Image]: ImageMailSection
         };
         return repository;
     }

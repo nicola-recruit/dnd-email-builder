@@ -1,0 +1,8 @@
+<div [ngStyle]="buildStyle()">
+    <div *ngIf="shouldDisplayPlaceholder()">
+        <mat-icon class="bigger-icon">photo</mat-icon>
+    </div>
+    <div *ngIf="!shouldDisplayPlaceholder()">
+        <img [src]="model.imageUid"/>
+    </div>
+</div>
