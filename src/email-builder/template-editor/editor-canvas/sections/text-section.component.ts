@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { TextMailSection } from 'email-builder/template-editor/common/classes/mail-sections/TextMailSection';
+import { TextMailSection } from '../classes/TextMailSection';
 import { TextBasedSectionComponent } from './TextBasedSectionComponent';
 
 @Component({

@@ -1,39 +1,39 @@
 import { TemplateEditorToolCategory } from 'email-builder/template-editor/template-editor.types';
-import { TextConfigurationBlock } from 'email-builder/template-editor/common/classes/section-configurations/TextConfigurationBlock';
-import { OrientationConfigurationBlock } from 'email-builder/template-editor/common/classes/section-configurations/OrientationConfigurationBlock';
+import { TextConfigurationBlock } from 'email-builder/template-editor/right-toolbar/classes/TextConfigurationBlock';
+import { OrientationConfigurationBlock } from 'email-builder/template-editor/right-toolbar/classes/OrientationConfigurationBlock';
 
 import { TextBasedMailSection } from './TextBasedMailSection';
 
-export class TextMailSection extends TextBasedMailSection {
+export class TitleMailSection extends TextBasedMailSection {
 
-    public text: string;
+    public title: string;
 
     constructor () {
         super();
-        this.category = TemplateEditorToolCategory.Text;
-        this.text = '<Click and edit>';
+        this.category = TemplateEditorToolCategory.Title;
+        this.title = '<Click and edit>';
     }
 
     protected buildTextConfiguration (): TextConfigurationBlock {
         const textConfiguration = new TextConfigurationBlock();
-        textConfiguration.fontSize = 12;
+        textConfiguration.fontSize = 24;
         return textConfiguration;
     }
 
     protected buildOrientationConfiguration (): OrientationConfigurationBlock {
         const orientationConfiguration = new OrientationConfigurationBlock();
-        orientationConfiguration.orientation = orientationConfiguration.left;
+        orientationConfiguration.orientation = orientationConfiguration.center;
         return orientationConfiguration;
     }
 
     protected getJSONState (): any {
         const state = {
-            text: this.text
+            title: this.title
         };
         return state;
     }
 
     protected setJSONState (state: any): void {
-        this.text = state.text;
+        this.title = state.title;
     }
 }

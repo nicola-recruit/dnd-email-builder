@@ -1,7 +1,7 @@
 import { MailSectionConfigurationBlock } from 'email-builder/template-editor/template-editor.types';
-import { PaddingAndColorConfigurationBlock } from 'email-builder/template-editor/common/classes/section-configurations/PaddingAndColorConfigurationBlock';
-import { TextConfigurationBlock } from 'email-builder/template-editor/common/classes/section-configurations/TextConfigurationBlock';
-import { OrientationConfigurationBlock } from 'email-builder/template-editor/common/classes/section-configurations/OrientationConfigurationBlock';
+import { PaddingAndColorConfigurationBlock } from 'email-builder/template-editor/right-toolbar/classes/PaddingAndColorConfigurationBlock';
+import { TextConfigurationBlock } from 'email-builder/template-editor/right-toolbar/classes/TextConfigurationBlock';
+import { OrientationConfigurationBlock } from 'email-builder/template-editor/right-toolbar/classes/OrientationConfigurationBlock';
 
 import { BaseMailSection } from './BaseMailSection';
 

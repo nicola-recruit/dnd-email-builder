@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ImageMailSection } from 'email-builder/template-editor/common/classes/mail-sections/ImageMailSection';
+import { ImageMailSection } from '../classes/ImageMailSection';
 
 @Component({
     selector: 'image-section',

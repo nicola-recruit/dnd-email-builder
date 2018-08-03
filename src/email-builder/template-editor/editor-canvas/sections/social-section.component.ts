@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { SocialMailSection } from 'email-builder/template-editor/common/classes/mail-sections/SocialMailSection';
+import { SocialMailSection } from '../classes/SocialMailSection';
 
 @Component({
     selector: 'social-section',

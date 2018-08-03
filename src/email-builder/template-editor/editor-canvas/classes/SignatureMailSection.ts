@@ -1,30 +1,31 @@
 import { BaseMailSection } from './BaseMailSection';
 import { TemplateEditorToolCategory, MailSectionConfigurationBlock } from 'email-builder/template-editor/template-editor.types';
-import { OrientationConfigurationBlock } from 'email-builder/template-editor/common/classes/section-configurations/OrientationConfigurationBlock';
+import { OrientationConfigurationBlock } from 'email-builder/template-editor/right-toolbar/classes/OrientationConfigurationBlock';
 
-export class ImageMailSection extends BaseMailSection {
+export class SignatureMailSection extends BaseMailSection {
 
-    public imageUid: string;
+    public signature: string;
     protected orientationConfiguration: OrientationConfigurationBlock;
 
     constructor () {
         super();
-        this.category = TemplateEditorToolCategory.Image;
+        this.category = TemplateEditorToolCategory.Signature;
         this.orientationConfiguration = new OrientationConfigurationBlock();
     }
+
     public getConfigurationBlocks (): MailSectionConfigurationBlock[] {
         return [this.orientationConfiguration];
     };
 
     protected getJSONState (): any {
         const state = {
-            imageUid: this.imageUid
+            signature: this.signature
         };
         return state;
     }
 
     protected setJSONState (state: any): void {
-        this.imageUid = state.imageUid;
+        this.signature = state.signature;
     }
 
     public getOrientationConfiguration (): OrientationConfigurationBlock {

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ButtonMailSection } from 'email-builder/template-editor/common/classes/mail-sections/ButtonMailSection';
+import { ButtonMailSection } from '../classes/ButtonMailSection';
 import { TextBasedSectionComponent } from './TextBasedSectionComponent';
 
 @Component({

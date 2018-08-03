@@ -1,7 +1,7 @@
 import { BaseMailSection } from './BaseMailSection';
 import { TemplateEditorToolCategory, MailSectionConfigurationBlock } from 'email-builder/template-editor/template-editor.types';
-import { OrientationConfigurationBlock } from 'email-builder/template-editor/common/classes/section-configurations/OrientationConfigurationBlock';
-import { SocialIdConfigurationBlock } from 'email-builder/template-editor/common/classes/section-configurations/SocialIdConfigurationBlock';
+import { OrientationConfigurationBlock } from 'email-builder/template-editor/right-toolbar/classes/OrientationConfigurationBlock';
+import { SocialIdConfigurationBlock } from 'email-builder/template-editor/right-toolbar/classes/SocialIdConfigurationBlock';
 
 export class SocialMailSection extends BaseMailSection {
 

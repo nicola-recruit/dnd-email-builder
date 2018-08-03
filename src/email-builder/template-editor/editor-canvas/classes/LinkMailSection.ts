@@ -1,9 +1,9 @@
 import { TextBasedMailSection } from './TextBasedMailSection';
 import { MailSectionConfigurationBlock, UrlBasedMailTemplateSection } from 'email-builder/template-editor/template-editor.types';
 import { TemplateEditorToolCategory } from 'email-builder/template-editor/template-editor.types';
-import { TextConfigurationBlock } from 'email-builder/template-editor/common/classes/section-configurations/TextConfigurationBlock';
-import { OrientationConfigurationBlock } from 'email-builder/template-editor/common/classes/section-configurations/OrientationConfigurationBlock';
-import { UrlConfigurationBlock } from 'email-builder/template-editor/common/classes/section-configurations/UrlConfigurationBlock';
+import { TextConfigurationBlock } from 'email-builder/template-editor/right-toolbar/classes/TextConfigurationBlock';
+import { OrientationConfigurationBlock } from 'email-builder/template-editor/right-toolbar/classes/OrientationConfigurationBlock';
+import { UrlConfigurationBlock } from 'email-builder/template-editor/right-toolbar/classes/UrlConfigurationBlock';
 
 export class LinkMailSection extends TextBasedMailSection implements UrlBasedMailTemplateSection {
 

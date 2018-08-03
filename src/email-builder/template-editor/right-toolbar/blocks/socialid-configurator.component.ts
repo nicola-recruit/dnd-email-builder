@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { SocialIdConfigurationBlock } from 'email-builder/template-editor/common/classes/section-configurations/SocialIdConfigurationBlock';
+import { SocialIdConfigurationBlock } from '../classes/SocialIdConfigurationBlock';
 import { BasicConfiguratorComponent } from './BasicConfiguratorComponent';
 import { FormBuilder, FormGroup } from '@angular/forms';
 

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { UrlConfigurationBlock } from 'email-builder/template-editor/common/classes/section-configurations/UrlConfigurationBlock';
+import { UrlConfigurationBlock } from '../classes/UrlConfigurationBlock';
 import { BasicConfiguratorComponent } from './BasicConfiguratorComponent';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 

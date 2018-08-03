@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { SignatureMailSection } from 'email-builder/template-editor/common/classes/mail-sections/SignatureMailSection';
+import { SignatureMailSection } from '../classes/SignatureMailSection';
 
 @Component({
     selector: 'signature-section',

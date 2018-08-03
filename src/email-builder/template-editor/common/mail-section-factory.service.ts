@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { TemplateEditorToolCategory, MailTemplateSection } from 'email-builder/template-editor/template-editor.types';
 import { UserSignatureService } from 'email-builder/template-editor/common/user-signature.service';
-import { TitleMailSection } from './classes/mail-sections/TitleMailSection';
-import { TextMailSection } from './classes/mail-sections/TextMailSection';
-import { DividerMailSection } from './classes/mail-sections/DividerMailSection';
-import { NullMailSection } from './classes/mail-sections/NullMailSection';
-import { BaseMailSection } from './classes/mail-sections/BaseMailSection';
-import { ButtonMailSection } from './classes/mail-sections/ButtonMailSection';
-import { LinkMailSection } from './classes/mail-sections/LinkMailSection';
-import { SignatureMailSection } from './classes/mail-sections/SignatureMailSection';
-import { SocialMailSection } from './classes/mail-sections/SocialMailSection';
-import { ImageMailSection } from './classes/mail-sections/ImageMailSection';
+import { TitleMailSection } from 'email-builder/template-editor/editor-canvas/classes//TitleMailSection';
+import { TextMailSection } from 'email-builder/template-editor/editor-canvas/classes//TextMailSection';
+import { DividerMailSection } from 'email-builder/template-editor/editor-canvas/classes//DividerMailSection';
+import { NullMailSection } from 'email-builder/template-editor/editor-canvas/classes//NullMailSection';
+import { BaseMailSection } from 'email-builder/template-editor/editor-canvas/classes//BaseMailSection';
+import { ButtonMailSection } from 'email-builder/template-editor/editor-canvas/classes//ButtonMailSection';
+import { LinkMailSection } from 'email-builder/template-editor/editor-canvas/classes//LinkMailSection';
+import { SignatureMailSection } from 'email-builder/template-editor/editor-canvas/classes//SignatureMailSection';
+import { SocialMailSection } from 'email-builder/template-editor/editor-canvas/classes//SocialMailSection';
+import { ImageMailSection } from 'email-builder/template-editor/editor-canvas/classes//ImageMailSection';
 
 type MailSectionConstructorRepository = {
     [category: number]: { new(): BaseMailSection }

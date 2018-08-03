@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { DividerMailSection } from 'email-builder/template-editor/common/classes/mail-sections/DividerMailSection';
+import { DividerMailSection } from '../classes/DividerMailSection';
 
 @Component({
     selector: 'divider-section',

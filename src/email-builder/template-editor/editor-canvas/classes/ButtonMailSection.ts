@@ -1,9 +1,9 @@
 import { MailSectionConfigurationBlock, UrlBasedMailTemplateSection } from 'email-builder/template-editor/template-editor.types';
 import { TemplateEditorToolCategory } from 'email-builder/template-editor/template-editor.types';
-import { PaddingAndColorConfigurationBlock } from 'email-builder/template-editor/common/classes/section-configurations/PaddingAndColorConfigurationBlock';
-import { TextConfigurationBlock } from 'email-builder/template-editor/common/classes/section-configurations/TextConfigurationBlock';
-import { OrientationConfigurationBlock } from 'email-builder/template-editor/common/classes/section-configurations/OrientationConfigurationBlock';
-import { UrlConfigurationBlock } from 'email-builder/template-editor/common/classes/section-configurations/UrlConfigurationBlock';
+import { PaddingAndColorConfigurationBlock } from 'email-builder/template-editor/right-toolbar/classes/PaddingAndColorConfigurationBlock';
+import { TextConfigurationBlock } from 'email-builder/template-editor/right-toolbar/classes/TextConfigurationBlock';
+import { OrientationConfigurationBlock } from 'email-builder/template-editor/right-toolbar/classes/OrientationConfigurationBlock';
+import { UrlConfigurationBlock } from 'email-builder/template-editor/right-toolbar/classes/UrlConfigurationBlock';
 
 import { TextBasedMailSection } from './TextBasedMailSection';
 

@@ -1,4 +1,4 @@
-import { TextBasedMailSection } from 'email-builder/template-editor/common/classes/mail-sections/TextBasedMailSection';
+import { TextBasedMailSection } from '../classes/TextBasedMailSection';
 
 export class TextBasedSectionComponent {
 

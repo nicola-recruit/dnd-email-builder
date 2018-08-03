@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { OrientationConfigurationBlock } from 'email-builder/template-editor/common/classes/section-configurations/OrientationConfigurationBlock';
+import { OrientationConfigurationBlock } from '../classes/OrientationConfigurationBlock';
 import { BasicConfiguratorComponent } from './BasicConfiguratorComponent';
 import { FormBuilder, FormGroup } from '@angular/forms';
 

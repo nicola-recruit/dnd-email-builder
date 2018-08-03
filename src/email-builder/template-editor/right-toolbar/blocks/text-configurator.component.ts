@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { TextConfigurationBlock } from 'email-builder/template-editor/common/classes/section-configurations/TextConfigurationBlock';
+import { TextConfigurationBlock } from '../classes/TextConfigurationBlock';
 import { BasicConfiguratorComponent } from './BasicConfiguratorComponent';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
