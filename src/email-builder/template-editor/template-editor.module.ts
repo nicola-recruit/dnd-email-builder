@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatIconModule } from '@angular/material/icon';
@@ -9,7 +10,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MccColorPickerModule } from 'material-community-components';
-import { MatFileUploadModule } from 'angular-material-fileupload';
 
 import { TemplateEditor } from './template-editor.component';
 import { LeftToolbar } from './left-toolbar/left-toolbar.component';
@@ -22,6 +22,7 @@ import { TextConfigurator } from './right-toolbar/blocks/text-configurator.compo
 import { OrientationConfigurator } from './right-toolbar/blocks/orientation-configurator.component';
 import { UrlConfigurator } from './right-toolbar/blocks/url-configurator.component';
 import { SocialIdConfigurator } from './right-toolbar/blocks/socialid-configurator.component';
+import { UploadedImageConfigurator } from './right-toolbar/blocks/uploaded-image-configurator.component';
 
 import { EditorCanvas } from './editor-canvas/editor-canvas.component';
 import { GenericSection } from './editor-canvas/sections/generic-section.component';
@@ -55,10 +56,12 @@ import { ImageSection } from './editor-canvas/sections/image-section.component';
         TextConfigurator,
         OrientationConfigurator,
         UrlConfigurator,
-        SocialIdConfigurator
+        SocialIdConfigurator,
+        UploadedImageConfigurator
     ],
     imports: [
         BrowserModule,
+        HttpClientModule,
         FlexLayoutModule,
         MatIconModule,
         MatCardModule,
@@ -68,8 +71,7 @@ import { ImageSection } from './editor-canvas/sections/image-section.component';
         MccColorPickerModule,
         BrowserAnimationsModule,
         FormsModule,
-        ReactiveFormsModule,
-        MatFileUploadModule
+        ReactiveFormsModule
     ],
     exports: [
         TemplateEditor

@@ -18,7 +18,8 @@ export enum MailSectionConfigurationBlockCategory {
     Orientation,
     Text,
     Url,
-    SocialId
+    SocialId,
+    UploadedImage
 }
 
 export interface JSONConverter {

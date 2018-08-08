@@ -14,8 +14,12 @@ export class ImageSection {
     }
 
     public shouldDisplayPlaceholder (): boolean {
+        return !this.model.hasImageName();
+    }
 
-        return !this.model.imageUid;
+    public getUploadedImageUrl (): string {
+
+        return 'http://localhost:3000/uploads/' + this.model.imageName;
     }
 
     public buildStyle (): any {

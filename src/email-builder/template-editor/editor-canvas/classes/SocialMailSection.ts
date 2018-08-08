@@ -16,10 +16,10 @@ export class SocialMailSection extends BaseMailSection {
         super();
         this.category = TemplateEditorToolCategory.Social;
         this.orientationConfiguration = new OrientationConfigurationBlock();
-        this.socialIdConfiguration = [new SocialIdConfigurationBlock('Facebook', this.setFacebookId), 
-            new SocialIdConfigurationBlock('Twitter', this.setTwitterId), 
-            new SocialIdConfigurationBlock('Google+', this.setGooglePlusId), 
-            new SocialIdConfigurationBlock('Skype', this.setSkypeId)];
+        this.socialIdConfiguration = [new SocialIdConfigurationBlock('Facebook', this.setFacebookId.bind(this)), 
+            new SocialIdConfigurationBlock('Twitter', this.setTwitterId.bind(this)), 
+            new SocialIdConfigurationBlock('Google+', this.setGooglePlusId.bind(this)), 
+            new SocialIdConfigurationBlock('Skype', this.setSkypeId.bind(this))];
     }
 
     private setFacebookId (id: any): void {

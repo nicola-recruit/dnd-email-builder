@@ -3,6 +3,6 @@
         <mat-icon class="bigger-icon">photo</mat-icon>
     </div>
     <div *ngIf="!shouldDisplayPlaceholder()">
-        <img [src]="model.imageUid"/>
+        <img [src]="getUploadedImageUrl()" class="image-section"/>
     </div>
 </div>
