@@ -1,6 +1,6 @@
 <form [formGroup]="configurationFormGroup" fxLayout="column">
     <div fxLayout="column">
-        <label for="file">Choose a file</label>
+        <label for="file"><h3>Choose a file</h3></label>
         <input type="file" id="file" accept="image/*" (change)="handleFileToUpload($event.target.files)">
      </div>
 </form>

@@ -17,7 +17,7 @@ export class ImageMailSection extends BaseMailSection {
         console.log('New image section');
     }
     public getConfigurationBlocks (): MailSectionConfigurationBlock[] {
-        return [this.orientationConfiguration, this.uploadedImageConfiguration];
+        return [this.uploadedImageConfiguration, this.orientationConfiguration];
     };
 
     protected getJSONState (): any {
