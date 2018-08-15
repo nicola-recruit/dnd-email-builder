@@ -1,0 +1,18 @@
+<div class="mail-section-borders" [ngSwitch]="sectionModel.category" (click)="handleClickEventOnComponent()">
+    <title-section *ngSwitchCase= "toolCategory.Title"
+                    [model]="sectionModel"></title-section>
+    <text-section *ngSwitchCase= "toolCategory.Text"
+                    [model]="sectionModel"></text-section>
+    <divider-section *ngSwitchCase= "toolCategory.Divider"
+                    [model]="sectionModel"></divider-section>
+    <button-section *ngSwitchCase= "toolCategory.Button"
+                    [model]="sectionModel"></button-section>
+    <link-section *ngSwitchCase= "toolCategory.Link"
+                    [model]="sectionModel"></link-section>
+    <signature-section *ngSwitchCase= "toolCategory.Signature"
+                    [model]="sectionModel"></signature-section>
+    <social-section *ngSwitchCase= "toolCategory.Social"
+                    [model]="sectionModel"></social-section>
+    <image-section *ngSwitchCase= "toolCategory.Image"
+                    [model]="sectionModel"></image-section>
+</div>
