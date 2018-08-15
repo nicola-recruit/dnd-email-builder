@@ -1,0 +1,13 @@
+<form [formGroup]="configurationFormGroup" fxLayout="column">
+    <div fxLayout="row">
+        <mat-form-field>
+            <input matInput placeholder="Background color" formControlName="backgroundColor" type="text" [readonly]="true"/>
+        </mat-form-field>
+        <mcc-color-picker (selected)="setColor($event)" [selectedColor]="configurationBlock.backgroundColor" [hideUsedColors]="true"></mcc-color-picker>
+    </div>
+    <div fxLayout="row">
+        <mat-form-field>
+            <input matInput placeholder="Box paddings (px)" formControlName="padding" type="number" step="1" min="0"/>
+        </mat-form-field>
+    </div>
+</form>
