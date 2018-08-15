@@ -1,0 +1,14 @@
+<div [ngSwitch]="configurationBlock.category">
+    <padding-color-configurator *ngSwitchCase= "blockCategory.PaddingAndColor" [configurationBlock]="configurationBlock">
+    </padding-color-configurator>
+    <text-configurator *ngSwitchCase= "blockCategory.Text" [configurationBlock]="configurationBlock">
+    </text-configurator>
+    <orientation-configurator *ngSwitchCase= "blockCategory.Orientation" [configurationBlock]="configurationBlock">
+    </orientation-configurator>
+    <url-configurator *ngSwitchCase= "blockCategory.Url" [configurationBlock]="configurationBlock">
+    </url-configurator>
+    <socialid-configurator *ngSwitchCase= "blockCategory.SocialId" [configurationBlock]="configurationBlock">
+    </socialid-configurator>
+    <uploaded-image-configurator *ngSwitchCase= "blockCategory.UploadedImage" [configurationBlock]="configurationBlock">
+    </uploaded-image-configurator>
+</div>

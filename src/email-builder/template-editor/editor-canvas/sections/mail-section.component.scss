@@ -1,0 +1,21 @@
+.mail-section-borders {
+    border-bottom: 1px dashed #000;
+}
+input {
+    &.text-input {
+        border: none;
+        border-color: transparent;
+        width: 100%;
+    }
+}
+a {
+    &:hover {
+        cursor: pointer;
+    }
+}
+.bigger-icon {
+    font-size: 48px;
+}
+.image-section {
+    max-width: 100%;
+}
