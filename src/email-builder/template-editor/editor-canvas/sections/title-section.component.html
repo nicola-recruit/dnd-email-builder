@@ -1,0 +1,6 @@
+<div [ngStyle]="buildStyle()" [hidden]="shouldBeHidden()">
+    <span>{{ model.title }}</span>
+</div>
+<form [hidden]="!shouldBeHidden()">
+    <input type="text" name="title" class="text-input" [ngStyle]="buildStyle()" [(ngModel)]="model.title"/>
+</form>
