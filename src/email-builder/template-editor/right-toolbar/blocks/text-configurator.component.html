@@ -1,0 +1,26 @@
+<form [formGroup]="configurationFormGroup" fxLayout="column">
+    <div fxLayout="row">
+        <mat-form-field>
+            <input matInput placeholder="Text color" formControlName="fontColor" type="text" [readonly]="true"/>
+        </mat-form-field>
+        <mcc-color-picker (selected)="setColor($event)" [selectedColor]="configurationBlock.fontColor" [hideUsedColors]="true"></mcc-color-picker>
+    </div>
+    <div fxLayout="row">
+        <mat-form-field>
+            <input matInput placeholder="Font size (pt)" formControlName="fontSize" type="number" step="1" min="8"/>
+        </mat-form-field>
+    </div>
+    <div fxLayout="row">
+        <mat-button-toggle-group multiple #group="matButtonToggleGroup" [value]="getTextStyles()" (change)="setTextStyles(group.value)">
+            <mat-button-toggle value="italic">
+                <mat-icon>format_italic</mat-icon>
+            </mat-button-toggle>
+            <mat-button-toggle value="bold">
+                <mat-icon>format_bold</mat-icon>
+            </mat-button-toggle>
+            <mat-button-toggle value="underline">
+                <mat-icon>format_underline</mat-icon>
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+</form>

@@ -1,0 +1,6 @@
+<div [hidden]="shouldBeHidden()" [ngStyle]="buildButtonOrientation()">
+    <a [ngStyle]="buildButtonStyle()">{{ model.label }}</a>
+</div>
+<form [hidden]="!shouldBeHidden()">
+        <input type="text" name="label" class="text-input" [ngStyle]="buildStyle()" [(ngModel)]="model.label"/>
+</form>
